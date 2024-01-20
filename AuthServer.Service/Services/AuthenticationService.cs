@@ -66,7 +66,7 @@ namespace AuthServer.Service.Services
 
         public Response<ClientTokenDto> CreateTokenByClient(ClientLoginDto clientLoginDto)
         {
-            var client = _clients.SingleOrDefault(x => x.Id == clientLoginDto.ClientId && x.Secret == clientLoginDto.ClientSecret);
+            var client = _clients.SingleOrDefault(x => x.Id == clientLoginDto.Id && x.Secret == clientLoginDto.ClientSecret);
 
             if (client == null)
             {
